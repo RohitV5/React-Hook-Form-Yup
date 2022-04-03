@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useData } from "./DataContext";
@@ -31,7 +32,7 @@ export const Step1 = () => {
   });
 
   const onSubmit = (data) => {
-    history.push("./step2");
+    history("../step2");
     setValues(data);
   };
 
@@ -42,21 +43,21 @@ export const Step1 = () => {
       </Typography>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Input
-          {...register('parentName')}
+          {...register('firstName', { required: true })}
           id="firstName"
           type="text"
           label="First Name"
           name="firstName"
-          error={!!errors.firstName}
+          error={!!errors?.firstName}
           helperText={errors?.firstName?.message}
         />
         <Input
-          ref={register}
+        {...register('lastName', { required: true })}
           id="lastName"
           type="text"
           label="Last Name"
           name="lastName"
-          error={!!errors.lastName}
+          error={!!errors?.lastName}
           helperText={errors?.lastName?.message}
         />
         <PrimaryButton>Next</PrimaryButton>

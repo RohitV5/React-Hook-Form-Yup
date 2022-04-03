@@ -47,7 +47,7 @@ export const Step2 = () => {
   const hasPhone = watch("hasPhone");
 
   const onSubmit = (data) => {
-    history.push("./step3");
+    history("../step3");
     setValues(data);
   };
 
@@ -58,26 +58,26 @@ export const Step2 = () => {
       </Typography>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Input
-          ref={register}
+         {...register('email', { required: true })}
           id="email"
           type="email"
           label="Email"
           name="email"
-          error={!!errors.email}
+          error={!!errors?.email}
           helperText={errors?.email?.message}
           required
         />
 
         <FormControlLabel
           control={
-            <Checkbox defaultValue={data.hasPhone} defaultChecked={data.hasPhone} color="primary" inputRef={register} name="hasPhone" />
+            <Checkbox defaultValue={data.hasPhone} defaultChecked={data.hasPhone} color="primary" {...register('hasPhone', { required: true })} name="hasPhone" />
           }
           label="Do you have a phone"
         />
 
         {hasPhone && (
           <Input
-            ref={register}
+          {...register('phoneNumber', { required: true })}
             id="phoneNumber"
             type="tel"
             label="Phone Number"

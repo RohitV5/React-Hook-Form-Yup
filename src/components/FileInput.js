@@ -49,7 +49,7 @@ export const FileInput = ({ control, name }) => {
             )}
           </Dropzone>
           <List>
-            {value.map((f, index) => (
+            {value?.map((f, index) => (
               <ListItem key={index}>
                 <ListItemIcon>
                   <InsertDriveFileIcon />
