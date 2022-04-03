@@ -1,15 +1,15 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useData } from "./DataContext";
 import { MainContainer } from "./components/MainContainer";
 import { FileInput } from "./components/FileInput";
 import { PrimaryButton } from "./components/PrimaryButton";
-import Typography from "@material-ui/core/Typography";
+import Typography from "@mui/material//Typography";
 import { Form } from "./components/Form";
 
 export const Step3 = () => {
-  const history = useHistory();
+  const history = useNavigate();
   const { data, setValues } = useData();
   const { control, handleSubmit } = useForm({
     defaultValues: {

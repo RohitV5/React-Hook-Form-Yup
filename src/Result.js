@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import Confetti from "react-confetti";
 import Swal from "sweetalert2";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@mui/styles';
 import { Link } from "react-router-dom";
 import { useData } from "./DataContext";
 import { MainContainer } from "./components/MainContainer";
 import { PrimaryButton } from "./components/PrimaryButton";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import InsertDriveFile from "@material-ui/icons/InsertDriveFile";
+import Table from "@mui/material//Table";
+import TableBody from "@mui/material//TableBody";
+import TableCell from "@mui/material//TableCell";
+import TableContainer from "@mui/material//TableContainer";
+import TableHead from "@mui/material//TableHead";
+import TableRow from "@mui/material//TableRow";
+import Paper from "@mui/material//Paper";
+import List from "@mui/material//List";
+import ListItem from "@mui/material//ListItem";
+import ListItemIcon from "@mui/material//ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
+import Typography from "@mui/material//Typography";
 
 const useStyles = makeStyles({
   root: {
@@ -67,7 +67,7 @@ export const Result = () => {
   return (
     <>
       <MainContainer>
-        <Typography component="h2" variant="h5">
+      <Typography component="h2" variant="h5">
           📋 Form Values
         </Typography>
         <TableContainer className={styles.root} component={Paper}>
@@ -99,7 +99,7 @@ export const Result = () => {
               {files.map((f, index) => (
                 <ListItem key={index}>
                   <ListItemIcon>
-                    <InsertDriveFile />
+                    <InsertDriveFileIcon />
                   </ListItemIcon>
                   <ListItemText primary={f.name} secondary={f.size} />
                 </ListItem>

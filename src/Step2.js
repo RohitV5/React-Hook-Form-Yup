@@ -1,11 +1,11 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { useData } from "./DataContext";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Typography from "@material-ui/core/Typography";
-import Checkbox from "@material-ui/core/Checkbox";
+import FormControlLabel from "@mui/material//FormControlLabel";
+import Typography from "@mui/material/Typography";
+import Checkbox from '@mui/material/Checkbox';
 import { PrimaryButton } from "./components/PrimaryButton";
 import { MainContainer } from "./components/MainContainer";
 import { Form } from "./components/Form";
@@ -34,7 +34,7 @@ const normalizePhoneNumber = (value) => {
 
 export const Step2 = () => {
   const { setValues, data } = useData();
-  const history = useHistory();
+  const history = useNavigate();
   const { register, handleSubmit, watch, errors } = useForm({
     defaultValues: {
       email: data.email,

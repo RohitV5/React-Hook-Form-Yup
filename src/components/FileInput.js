@@ -1,15 +1,14 @@
 import React from "react";
 import Dropzone from "react-dropzone";
 import { Controller } from "react-hook-form";
-import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import CloudUpload from "@material-ui/icons/CloudUpload";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import InsertDriveFile from "@material-ui/icons/InsertDriveFile";
-
+import { makeStyles } from '@mui/styles'
+import Paper from "@mui/material/Paper";
+import CloudUpload from "@mui/icons-material/CloudUpload";
+import List from "@mui/material/List";
+import ListItem from "@mui/material//ListItem";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "#eee",
@@ -53,7 +52,7 @@ export const FileInput = ({ control, name }) => {
             {value.map((f, index) => (
               <ListItem key={index}>
                 <ListItemIcon>
-                  <InsertDriveFile />
+                  <InsertDriveFileIcon />
                 </ListItemIcon>
                 <ListItemText primary={f.name} secondary={f.size} />
               </ListItem>

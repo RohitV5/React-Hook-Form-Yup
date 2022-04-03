@@ -1,7 +1,7 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useData } from "./DataContext";
-import Typography from "@material-ui/core/Typography";
+import Typography from "@mui/material//Typography";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { PrimaryButton } from "./components/PrimaryButton";
@@ -23,7 +23,7 @@ const schema = yup.object().shape({
 
 export const Step1 = () => {
   const { setValues, data } = useData();
-  const history = useHistory();
+  const history = useNavigate();
   const { register, handleSubmit, errors } = useForm({
     defaultValues: { firstName: data.firstName, lastName: data.lastName },
     mode: "onBlur",
