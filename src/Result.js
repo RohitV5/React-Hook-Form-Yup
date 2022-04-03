@@ -79,12 +79,12 @@ export const Result = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {entries.map((entry) => (
+              {entries?.map((entry) => (
                 <TableRow key={entry[0]}>
                   <TableCell component="th" scope="row">
                     {entry[0]}
                   </TableCell>
-                  <TableCell align="right">{entry[1].toString()}</TableCell>
+                  <TableCell align="right">{entry[1]?.toString()}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -96,7 +96,7 @@ export const Result = () => {
               📦 Files
             </Typography>
             <List>
-              {files.map((f, index) => (
+              {files?.map((f, index) => (
                 <ListItem key={index}>
                   <ListItemIcon>
                     <InsertDriveFileIcon />
